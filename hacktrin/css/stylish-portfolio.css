@@ -318,8 +318,13 @@ hr.small {
   }
 
   .img-fluid {
-    max-width: 50%;
-    height: auto;
+    width: 140px;
+    height: 140px;
+  }
+
+  .damon {
+    width: 175px;
+    height: 175px;
   }
 
 
