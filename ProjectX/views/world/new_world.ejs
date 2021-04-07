@@ -1,0 +1,16 @@
+<%-include('../partials/header', {page_title:"Add a new world"})-%>
+
+	<h1>The Galaxy Giver</h1>
+	<br>
+
+	<h2>Want to add this world?</h2>
+	<h3>Name: <%= world.title %></h3>
+
+	<form action="/world/<%=world.worldID%>" method="POST">
+	<button>Add World</button>
+	</form>
+	<form action="/worlds" method="GET">
+	<button>Cancel</button>
+	</form>
+
+	<%-include('../partials/footer')-%>

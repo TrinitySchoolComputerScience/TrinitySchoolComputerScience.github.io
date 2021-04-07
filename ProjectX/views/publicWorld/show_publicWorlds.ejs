@@ -1,0 +1,20 @@
+<%-include('../partials/header', {page_title:"All Public Worlds"})-%>
+<div class="jumbotron">
+    <h1>You've Reached the Public World Repository!</h1>
+</div>
+
+<div class="row">
+<% Object.keys(publicWorlds).forEach(function(key, i){ %>
+	<div class="col-md-4">
+	<h3><a href="/publicWorld/<%= key %>"> <%= publicWorlds[key].title %></a></h3>
+	</div>
+    <%if ((i+1)%3==0 && i!=0){ %>
+       </div> <!-- end the row div-->
+           <div class="row">
+        <% } %>
+
+	<% }) %>
+    </div> <!--last row -->
+    <br>
+
+<%-include('../partials/footer')-%>

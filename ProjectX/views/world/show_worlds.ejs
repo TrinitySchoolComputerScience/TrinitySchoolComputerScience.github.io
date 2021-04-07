@@ -1,0 +1,33 @@
+<%-include('../partials/header', {page_title:"All Worlds"})-%>
+<div class="jumbotron">
+    <h1>Welcome to Galaxy Giver!</h1>
+</div>
+
+<div class="row">
+<% Object.keys(worlds).forEach(function(key, i){ %>
+	<div class="col-md-4">
+	<h3><a href="/world/<%= key %>"> <%= worlds[key].title %></a></h3>
+
+	<form action="/world/<%= key %>/edit" method="GET">
+	  <button>Update World</button>
+	</form>
+
+	<form action="/world/<%= key %>?_method=DELETE" method="POST">
+	  <button>Delete World</button>
+	</form>
+	</div>
+    <%if ((i+1)%3==0 && i!=0){ %>
+       </div> <!-- end the row div-->
+           <div class="row">
+        <% } %>
+
+	<% }) %>
+    </div> <!--last row -->
+    <br>
+<h2> Add a new world to the The Galaxy Giver:</h2>
+<form action="/world/create" method="GET">
+	<input type="text" name= "title" placeholder="Enter planet to add...">
+	<button>Search for planet</button>
+</form>
+
+<%-include('../partials/footer')-%>

@@ -1,0 +1,27 @@
+<%-include('../partials/header', {page_title:"World Details"})-%>
+
+    <div class="jumbotron">
+        <h1><%= world.title %></h1>
+    </div>
+
+	<% Object.keys(world).forEach(function(key){ %>
+		<% if(key!='poster'&key!='title'&key!='plot'){ %>
+			<h3><%= key %>: <%= world[key] %></h3>
+		<% } %>
+	<% }); %>
+
+  <% if(world.public){ %>
+    <form action="/world/setprivate/<%=world.worldID%>" method="POST">
+      <%console.log(world.worldID)%>
+    <button>Set Private</button>
+    </form>
+  <%} else {%>
+    <form action="/world/setpublic/<%=world.worldID%>" method="POST">
+      <%console.log(world.worldID)%>
+    <button>Set Public</button>
+    </form>
+  <%}%>
+
+	<a href="/worlds">Return to List</a>
+
+  <%-include('../partials/footer')-%>

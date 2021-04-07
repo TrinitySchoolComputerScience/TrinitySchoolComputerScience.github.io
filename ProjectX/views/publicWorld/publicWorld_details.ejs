@@ -1,0 +1,49 @@
+<%-include('../partials/header', {page_title:"Public World Details"})-%>
+
+    <div class="jumbotron">
+        <h1><%= publicWorld.title %></h1>
+        <h1 hidden> <%= publicWorld.id %> </h1>
+    </div>
+
+	<% Object.keys(publicWorld).forEach(function(key){ %>
+		<% if(key!='publicWorlder'&key!='title'&key!='plot'){ %>
+			<h3><%= key %>: <%= publicWorld[key] %></h3>
+		<% } %>
+	<% }); %>
+	<a href="/publicWorlds">Return to List</a>
+
+  <h2>Likes:<span id="like_count"><%=publicWorld.likes%></span> <button id="like_button" type="button">Like</button> </h2>
+
+  <h3> Leave a Comment: </h3>
+  <div class="collection">
+    <p class="collection-item teal lighten-1">
+    Name: <textarea type="text" id="comment_author_input" name="text"> </textarea>
+    </p>
+    <p class="collection-item teal lighten-1">
+    Date: <textarea type="text" id="comment_date_input" name="text"> </textarea>
+    </p>
+    <p class="collection-item teal lighten-1">
+    Comment: <textarea type="text" id="comment_text_input" name="text"> </textarea>
+    </p>
+     <p class="collection-item teal lighten-1">
+      <button id="submit_button" class="white-text waves-effect waves-light btn teal lighten-1" type="button"> submit </button>
+    </p>
+  </div>
+  <h3> Comments: </h3>
+  <div class="collection" id="commentSection">
+    <% for(var i=0; i<publicWorld.comment.length; i++) {%>
+      <p class="comment collection-item teal lighten-1" id="comment_<%=i%>">
+          <span class="comment_author">Author: <%=publicWorld.comment[i].author%></span>
+          <br> <br>
+          <span class="comment_date">Date: <%=publicWorld.comment[i].date%></span>
+          <br> <br>
+          <span class="comment_publicWorld"><%=publicWorld.comment[i].text%></span>
+      </p>
+    <% } %>
+  </div>
+
+  <a href="/publicWorlds">Return to List</a>
+
+<script src="/js/publicworlddetails_scripts.js"></script>
+
+  <%-include('../partials/footer')-%>

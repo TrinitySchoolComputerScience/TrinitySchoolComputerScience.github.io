@@ -1,0 +1,24 @@
+<%-include('../partials/header', {page_title:"Edit World"})-%>
+
+
+<h1>The World Hut</h1>
+<br>
+<h2>Update <%= world.title %></h2>
+
+<form action="/world/<%= world.id%>?_method=PUT" method="POST">
+<ol>
+<% Object.keys(world).forEach(function(key){ %>
+	<% if(key != "worldID" && key != "public"){ %>
+	<li><%=key%>: <input type="text" name="<%=key%>" value="<%= world[key] %>">
+	</li>
+	<%}else{%>
+		<li><%=key%>: <input type="text" name="<%=key%>" value="<%= world[key] %>" disabled>
+		</li>
+	<%}%>
+<% }); %>
+</ol>
+	<button>Update World</button>
+</form>
+
+
+<%-include('../partials/footer')-%>
