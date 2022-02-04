@@ -6,6 +6,18 @@
 
  /* Global Styles */
 
+ @media only screen and (max-width: 768px) {
+
+ #content-desktop {display: none;}
+ #content-mobile {display: block;}
+ }
+
+ @media only screen and (min-width: 769px) {
+
+ #content-desktop {display: block;}
+ #content-mobile {display: none;}
+ }
+
  html, body {
   width: 100%;
   height: 100%;
@@ -39,15 +51,6 @@ body {
 }
 
 
-#content-desktop {display: block;}
-#content-mobile {display: none;}
-
-@media screen and (max-width: 768px) {
-
-#content-desktop {display: none;}
-#content-mobile {display: block;}
-
-}
 
 /* Custom Button Styles */
 
