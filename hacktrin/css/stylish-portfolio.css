@@ -50,7 +50,23 @@ body {
   text-decoration: underline;
 }
 
-
+.card {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    display: inline-block;
+}
+.card .img-top {
+    display: none;
+    position: absolute;
+    margin-top: 0px;
+    top: 6.5px;
+    left: 0;
+    z-index: 0;
+}
+.card:hover .img-top {
+    display: inline;
+}
 
 /* Custom Button Styles */
 

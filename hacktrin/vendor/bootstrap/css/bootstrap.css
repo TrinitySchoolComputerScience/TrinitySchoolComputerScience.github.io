@@ -515,7 +515,7 @@ mark,
 }
 
 .list-inline {
-  padding-left: 0;
+  padding-left: auto;
   list-style: none;
 }
 

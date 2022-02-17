@@ -615,10 +615,10 @@
 .fa-phone:before {
   content: "\f095";
 }
-.fa-square-o:before {
-  content: "\f096";
+.fa-square-t:before {
+  content: "\e280";
 }
-.fa-bookmark-o:before {
+.fa-bookmark-0:before {
   content: "\f097";
 }
 .fa-phone-square:before {
